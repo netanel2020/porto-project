@@ -1,0 +1,15 @@
+<div>
+<button (click)="getPosts()">
+    Get the  prodacts</button> 
+
+
+</div>
+
+<div>
+<!–– this data wil sent from the api server  ––>
+<div *ngFor="let item of Posts" >
+                   <h1  >{{item.PRDname }}</h1>
+   <img src="{{item.PRDImage}}"  />
+ <h3>price:{{item.PRDPrice }} , category:{{item.PRDCategory }}  
+    contein:{{item.PRDTitle }} </h3></div>
+</div>

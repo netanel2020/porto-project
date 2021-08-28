@@ -1,5 +1,5 @@
 
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div>
 
     <h3>
@@ -7,5 +7,19 @@
     </h3>
   
   </div>
+
+
+<div>
+  <button (click)="getPosts()">
+      Get the  post</button> 
+
+
+</div>
+
+<div>
+  <!–– and the comment closes with ––>
+  <div *ngFor="let item of Posts" >
+    {{item.USRID }} {{item.USRname}} </div>
+</div>
 
 
