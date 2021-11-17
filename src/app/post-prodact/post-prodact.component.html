@@ -1,0 +1,18 @@
+
+<form #ProdactsForm="ngForm" (ngSubmit)="getProdactsFormData(ProdactsForm.value)">
+<input type="text" ngModel name="PRDname" placeholder="שם המוצר">
+<br><br>
+<input type="text" ngModel name="PRDAttribute" placeholder="תיאור המוצר">
+<br><br>
+<input type="text" ngModel name="PRDTitle" placeholder="תכולת המוצר">
+<br><br>
+<input type="text" ngModel name="PRDCategory" placeholder="קטגוריה">
+<br><br>
+<input type="number" ngModel name="PRDPrice" placeholder="מחיר">
+<br><br>
+<input type="number" ngModel name="PRDCost" placeholder="עלות מוצר">
+<br><br>
+<input type="text" ngModel name="PRDImage" placeholder="קישור לתמונת המוצר">
+<br><br>
+<button >add new prodact</button>
+</form>

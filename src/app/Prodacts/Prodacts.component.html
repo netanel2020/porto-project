@@ -1,15 +1,30 @@
 <div>
-<button (click)="getPosts()">
+
+
+<!--<samp ></samp>-->
+<div>   
+<button [ngModel]  (click)="getPosts()">
     Get the  prodacts</button> 
-
-
 </div>
 
-<div>
-<!–– this data wil sent from the api server  ––>
-<div *ngFor="let item of Posts" >
-                   <h1  >{{item.PRDname }}</h1>
-   <img src="{{item.PRDImage}}"  />
- <h3>price:{{item.PRDPrice }} , category:{{item.PRDCategory }}  
-    contein:{{item.PRDTitle }} </h3></div>
+
+
+
+<div >
+<div (onload)="getPosts()" *ngFor="let item of Posts">
+
+
+     <h1  style="right: 50px;">{{item.PRDname}} </h1>
+     <h1>מחיר : ₪{{item.PRDPrice}} </h1>   
+    <img src="{{item.PRDImage}}"  width="300" height="200">
+    <h3>category:{{item.PRDCategory}}     contein:{{item.PRDTitle}} </h3>
+    <br>
+     <button #adbotton type="submit" [ngModel] (click)="add_to_busket(item)">
+         add to busket
+        </button>
+
+</div>
+</div>
+
+
 </div>

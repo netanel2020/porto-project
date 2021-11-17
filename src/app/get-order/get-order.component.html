@@ -1,0 +1,23 @@
+<div>
+   
+    <div>   
+    <button (click)="getOrders()">
+        Get the  order</button> 
+    </div>
+    
+    <!–– this data wil sent from the api server  ––>
+    
+    <div *ngFor="let item of Orders"   >
+    <p>{{item.ORDID}} {{item.NumberOfProdacts}} {{item.ProdactsNames}}
+         {{item.ORDAmount}} {{item.ORDDastenyAddress}} {{item.TotalCost}} {{item.USRIID}} {{item.USRPaymentDDeatals}} </p>
+    </div> 
+ </div>
+<!--{"ORDID":1
+    "NumberOfProdacts":2
+    "ProdactsNames":"sample string 3"
+    "ORDAmount":"sample string 4"
+    "ORDDastenyAddress":"sample string 5"
+    "TotalCost":6
+    "USRIID":7
+    "USRPaymentDDeatals":"sample string 8"}-->
+    

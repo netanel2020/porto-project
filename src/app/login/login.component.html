@@ -1,0 +1,17 @@
+<body class="text-center">
+    <form class="form-signin" #LoginForm="ngForm" (ngSubmit)="LoginUser(LoginForm.value)">
+     
+      <h1 class="h3 mb-3 font-weight-normal">לצרכי אבטחה נא הכנס את פרטי הזיהוי שלך </h1>
+      <label for="inputEmail" class="sr-only">מספר טלפון</label>
+      <input ngModel type="tel" id="inputEmail" name="USRPhone1" class="form-control" placeholder=" מספר טלפון" required autofocus>
+      <label for="inputPassword" class="sr-only">סיסמה</label>
+      <input type="password" ngModel name="pass1" id="inputPassword" class="form-control" placeholder="סיסמה" required>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> זכור אותי
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+    </form>
+  </body>

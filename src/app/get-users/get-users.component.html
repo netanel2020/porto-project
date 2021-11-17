@@ -1,0 +1,37 @@
+<div>
+
+    <div>
+    
+    
+    
+    
+    
+<div>   
+    <button (click)="getUsers()">
+        Get Users list</button> 
+    </div>
+    <!–– this data wil sent from the api server  ––>
+    <div>
+    <div *ngFor="let item of Users"   >
+<P > 
+    {{item.USRID}} :מזהה משתמש <br>
+      שם פרטי: {{item.USRname}}<br>
+     משפחה: {{item.USRlastName}} <br>
+      כתובת: {{item.USRaddres}}<br>
+       עיר מגורים: {{item.City}} <br>
+      שם משתמש: {{item.USRTitle}}<br>
+       {{item.USRPhone}} :טלפון<br>
+        {{item.USRPaymentDeatals}} :פרטי תשלום   </P>
+    <!--{"USRID":1
+        "USRname":"sample string 2"
+        "USRlastName":"sample string 3"
+        "USRaddres":"sample string 4"
+        "City":"sample string 5"
+        "USRTitle":"sample string 6"
+        "USRPhone":"sample string 7"
+        "USRPaymentDeatals":"sample string 8"}-->
+    </div>
+    </div>
+    </div>
+    
+    </div>

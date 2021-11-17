@@ -1,10 +1,23 @@
 <mat-toolbar  class="mat-elevation-z18">
-    <a mat-button>🍔</a>
-    <a mat-button>אודות</a>
+    <a mat-button routerLink="/AboutUs">אודות</a>
     <a mat-button>משלוחים   </a>
-    <a mat-button>סניפים</a>
-    <a mat-button>מבצעי אפליקציה</a>
+    <a mat-button routerLink="/location">הוראות הגעה</a>
+    <a mat-button>מבצעים חמים</a>
     <a mat-button>המלצות</a>
     <a mat-button>גם אנחנו נהנינו בפורטו</a>
-    <a  mat-raised-button  color="accent">סל</a>
+    
+    <nav>
+      <a mat-button routerLink="/login">כניסה</a>
+    </nav>
+    <nav>
+        <a mat-button routerLink="/add-users">הירשם</a>
+      </nav>
+    <nav>
+        <a mat-button routerLink="/managment">ניהול</a>
+      </nav>
+        <a routerLink="/busket" mat-raised-button  color="" >הסל שלי</a>
+     
 </mat-toolbar>
+<div>
+    <img  src="../../assets/porto-logo-jpg2.jpg" alt="logo"/>
+</div>
