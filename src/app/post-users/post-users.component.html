@@ -1,0 +1,30 @@
+
+<form #userForm="ngForm" (ngSubmit)="getUserFormData(userForm.value)">
+    <input type="text" ngModel name="USRname" placeholder="שם המשתמש">
+    <br><br>
+    <input type="text" ngModel name="USRlastName" placeholder="שם משפחה">
+    <br><br>
+    <input type="text" ngModel name="USRaddres" placeholder="כתובת"> 
+    <br><br>
+    <input type="password" ngModel name="USPass" placeholder="סיסמה"> 
+    <br><br>
+    <input type="text" ngModel name="USPassValid" placeholder="אימות סיסמה">
+    <br><br>
+    <input type="text" ngModel name="City" placeholder="עיר">
+    <br><br>
+    <input type="email" ngModel name="USRMail" placeholder="כתובת מייל">
+    <br><br>
+    <input type="text" ngModel name="USRPhone" placeholder="טלפון">
+    <br><br>
+    <input type="text" ngModel name="USRPaymentDeatals" placeholder="פרטי תשלום">
+    <br><br>
+    <button >sign in user</button>
+    </form>
+        <!--{"USRID":1
+        "USRname":"sample string 2"
+        "USRlastName":"sample string 3"
+        "USRaddres":"sample string 4"
+        "City":"sample string 5"
+        "USRTitle":"sample string 6"
+        "USRPhone":"sample string 7"
+        "USRPaymentDeatals":"sample string 8"}-->

@@ -1,0 +1,30 @@
+
+<form #orderForm="ngForm" (ngSubmit)="getOrderFormData(orderForm.value)">
+    
+    <br><br>
+    <input type="number" ngModel name="NumberOfProdacts" placeholder="מספר מוצרים">
+    <br><br>
+    <input type="text" ngModel name="ProdactsNames" placeholder="שמות המוצרים">
+    <br><br>
+    <input type="text" ngModel name="ORDAmount" placeholder="מחיר המוצרים">
+    <br><br>
+    <input type="text" ngModel name="ORDDastenyAddress" placeholder="כתובת משלוח הזמנה">
+    <br><br>
+    <input type="number" ngModel name="TotalCost" placeholder="סכום סופי לתשלום">
+    <br><br>
+    <!--פרטי התשלום ומזהה מזמין הם למנהל בלבד ולא ללקוחות-->
+    <input type="number" ngModel name="USRIID" placeholder="מזהה משתמש">
+    <br><br>
+    <!--פרטי התשלום ומזהה מזמין הם למנהל בלבד ולא ללקוחות-->
+    <input type="text" ngModel name="USRPaymentDDeatals" placeholder="פרטי תשלום ">
+    <br><br>
+    <button >אשר הזמנה</button>
+    </form>
+    <!--{"ORDID":1
+    "NumberOfProdacts":2
+    "ProdactsNames":"sample string 3"
+    "ORDAmount":"sample string 4"
+    "ORDDastenyAddress":"sample string 5"
+    "TotalCost":6
+    "USRIID":7
+    "USRPaymentDeatals":"sample string 8"}-->

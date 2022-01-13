@@ -1,0 +1,19 @@
+  <!--if the user an admin -->
+<div *ngIf="ManagAutenticated">
+<nav>
+    <a routerLink="/get-orders">רשימת ההזמנות</a>
+  </nav>
+
+ <nav>
+    <a routerLink="/send-prodacts">הוסף מוצר</a>
+  </nav>
+  <nav>
+    <a routerLink="/users">משתמשים</a>
+  </nav>
+  </div>
+
+  <!--if the user is not an admin -->
+  <div *ngIf="!ManagAutenticated">
+
+    <p>you are not an manager</p>
+  </div>
