@@ -2,10 +2,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { busketbnterface, BusketData,busketinterface } from '../busketdata';
-import { Injectable } from '@angular/core';
-import { inject } from '@angular/core/testing';
-import { Observable } from 'rxjs';
-import { data } from 'jquery';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-busket',
@@ -14,80 +12,85 @@ import { data } from 'jquery';
 })
 
 export class BusketComponent implements OnInit {
- 
-  
- 
 
+
+
+public s:any;
+public SumPrice:number=0;
     //var to get the data from http request
     MyData:any;
-    public MyBusketID:number=0;
-     JSONBusPRDC:any;
+
+    //GET THE CURENT USER BUSKET
+    mybusID:any=localStorage.getItem("deatails");
+    public MyBusketID:number=this.mybusID;
+
+       JSONBusPRDC:any;
      BusketProdact:busketinterface[]=[];
 
-readonly ROOT_URL = "https://localhost:44353/api/Busket/"+this.MyBusketID;
+readonly ROOT_URL = "http://theporto.online/interwebapi/api/Busket/Get/"+this.MyBusketID;
     //link to my external websyte with my data
-   
-     
-   // a:number=0;
-   private busketbnterface=new busketbnterface;
-    
-   private BusketData=new BusketData;
- 
-  
 
-  constructor(private http:HttpClient ) {}
+
+   // a:number=0;
+   public busketbnterface=new busketbnterface;
+
+   private BusketData=new BusketData;
+
+
+
+  constructor(private http:HttpClient ,
+    private router:Router) {}
+    delay =  async (ms:number) => new Promise(res => setTimeout(res, ms));
+
+
+
   getBusket(){
     //is a temp var to demonstrate my BusketID actualy i shuld get it from the token later
 
     //my data get a strig with my data
-this.http.get(this.ROOT_URL).subscribe(data=> this.MyData=data);
+this.http.get(this.ROOT_URL,{withCredentials:true}).subscribe(data=> this.MyData=JSON.parse(data.toString()));
 //Users take the string and change it to json object
+this.JSONBusPRDC=this.MyData;
 
+for(var a in this.MyData){
+this.SumPrice+= this.MyData[a].PRDPrice;
 
-this.BusketData=JSON.parse(this.MyData);
-//for test
-
-
-
-for (const obj in this.BusketData) {
-  this.GetProdact(this.BusketData[obj].PRDID,obj);
-  
- 
- 
-  
 }
-  
-    }
-
-    GetProdact(a: number,obj:any){
-//links to my external websyte with my data
-   var ROOT_URL1 = "https://localhost:44353/api/Prodact/"+a;
-     
-
-   this.http.get<busketinterface[]>(ROOT_URL1).subscribe(data=> this.JSONBusPRDC=data )
-   
-  //console.log(this.JSONBusPRDC+"json string from server");
-  
- if(JSON.parse(this.JSONBusPRDC))
-  this.BusketProdact=JSON.parse(this.JSONBusPRDC);
-//BusketProdact take the json string and change it to  object
 
     }
-    
+
+    time: boolean=true;
+    wait2sec = async () => {
+      await this.delay(2000);
+      console.log("Waited 5s");
+    this.getBusket();
+
+    this.time=false;
+    };
+    DeleteFromBusket(ITEM:Number){
+      this.http.delete("http://theporto.online/interwebapi/api/Busket/Delete/"+ITEM).subscribe((res) => this.s=res);
+alert(this.s+"מוצר מספר"+ITEM+" נמחק בהצלחה ")
+
+window.location.reload()
+this.getBusket();
+    }
+
 
   ngOnInit(): void {
+    this.getBusket();
+    this.wait2sec();
   }
 
 }
 
-  
 
 
 
 
-  /* 
+
+  /*
     //var to get the data from http request
- 
+
   getPosts(){
 
     }

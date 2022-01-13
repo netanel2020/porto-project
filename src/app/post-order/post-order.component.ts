@@ -5,8 +5,9 @@ import { PostRequestService } from '../post-request.service';
   templateUrl: './post-order.component.html',
   styleUrls: ['./post-order.component.less']
 })
+
 export class PostOrderComponent implements OnInit {
-  readonly ROOT_URL = "https://localhost:44353/api/Orders";
+  readonly ROOT_URL = "http://theporto.online/interwebapi/api/Orders/addOrders";
   constructor(private PostRequest :PostRequestService) { }
   getOrderFormData(data:any){
     this.PostRequest.SavePost(data,this.ROOT_URL).subscribe((data)=>{
@@ -14,13 +15,17 @@ export class PostOrderComponent implements OnInit {
 
       JSON.stringify(data);
       console.log(data);
-    
+
     })
     console.warn(data);
 
 
   }
+
   ngOnInit(): void {
+
+
+
   }
 
 }

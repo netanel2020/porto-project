@@ -9,5 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent {
   title = 'porto-project';
-  public observable:Observable<any> =new Observable((observer)=>{})
+ public observable:Observable<any> =new Observable((observer)=>{})
 }
+
+

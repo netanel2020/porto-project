@@ -1,16 +1,19 @@
 <div>
-   
-    <div>   
-    <button (click)="getOrders()">
-        Get the  order</button> 
-    </div>
-    
+
+  <div *ngIf="time">
+
+    <img src="../../assets/loading-slow-internet.gif" alt="loading" title="loading gif" style="position: center;" />
+     </div>
+
     <!–– this data wil sent from the api server  ––>
-    
+
     <div *ngFor="let item of Orders"   >
     <p>{{item.ORDID}} {{item.NumberOfProdacts}} {{item.ProdactsNames}}
          {{item.ORDAmount}} {{item.ORDDastenyAddress}} {{item.TotalCost}} {{item.USRIID}} {{item.USRPaymentDDeatals}} </p>
-    </div> 
+         <div *ngIf="item.length == 0">
+          <p>somthing its wrong reload this page to solve this problem</p>
+          </div>
+        </div>
  </div>
 <!--{"ORDID":1
     "NumberOfProdacts":2
@@ -20,4 +23,3 @@
     "TotalCost":6
     "USRIID":7
     "USRPaymentDDeatals":"sample string 8"}-->
-    

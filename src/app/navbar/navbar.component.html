@@ -1,23 +1,32 @@
-<mat-toolbar  class="mat-elevation-z18">
-    <a mat-button routerLink="/AboutUs">אודות</a>
-    <a mat-button>משלוחים   </a>
-    <a mat-button routerLink="/location">הוראות הגעה</a>
-    <a mat-button>מבצעים חמים</a>
-    <a mat-button>המלצות</a>
-    <a mat-button>גם אנחנו נהנינו בפורטו</a>
-    
-    <nav>
-      <a mat-button routerLink="/login">כניסה</a>
-    </nav>
-    <nav>
-        <a mat-button routerLink="/add-users">הירשם</a>
-      </nav>
-    <nav>
-        <a mat-button routerLink="/managment">ניהול</a>
-      </nav>
-        <a routerLink="/busket" mat-raised-button  color="" >הסל שלי</a>
-     
+<mat-toolbar width="100%" class="mat-elevation-z18">
+    <a class="secondery" mat-button routerLink="/AboutUs">אודות</a>
+    <a class="secondery" id="third"  mat-button routerLink="/shipment">משלוחים   </a>
+    <a class="secondery" id="third" mat-button routerLink="/location">הוראות הגעה</a>
+    <a class="secondery" id="third" mat-button>מבצעים חמים</a>
+    <a class="secondery" mat-button>המלצות</a>
+    <a class="secondery" mat-button (click)="Show()">חפש מוצר</a>
+<input class="search" *ngIf="itsPushed" (mouseout)="UnShow()" (value)="Search()">
+    <a class="main" mat-button routerLink="/login" *ngIf="!autenticated">כניסה</a>
+    <a class="main" mat-button routerLink="/add-users" *ngIf="!autenticated">הירשם</a>
+    <a class="main" mat-button routerLink="/managment" *ngIf="manager">ניהול</a>
+    <a class="main" mat-button  (click)="logout()" *ngIf="autenticated">יציאה</a>
+    <button class="main" routerLink="/busket" mat-raised-button  matBadge="8" matBadgePosition="before" matBadgeColor="red" >הסל שלי</button>
+    <a class="main" id="burger"  mat-raised-button  color="" (click)="openul()">&#9776; </a>
+
+
+
+
+
 </mat-toolbar>
+    <ul [hidden]="toggle==0" style="z-index:10;" align="left">
+
+        <li>  <a class="seconderyUL" id="thirdUL"  mat-button routerLink="/shipment">משלוחים   </a>     </li>
+        <li>  <a class="seconderyUL" id="thirdUL" mat-button routerLink="/location">הוראות הגעה</a>    </li>
+        <li>   <a class="seconderyUL" id="thirdUL" mat-button>מבצעים חמים</a>     </li>
+        <li id="thirdUL2"> <a class="seconderyUL"  mat-button>המלצות</a></li>
+        <li id="thirdUL2"><a class="seconderyUL"   mat-button (click)="Show()">חפש מוצר</a></li>
+        <li id="thirdUL2">  <a class="seconderyUL"  mat-button routerLink="/AboutUs">אודות</a>     </li>
+             </ul>
 <div>
-    <img  src="../../assets/porto-logo-jpg2.jpg" alt="logo"/>
+    <img id="logo" style="z-index:-1;"  src="../../assets/porto-logo-jpg2.jpg" alt="logo"/>
 </div>

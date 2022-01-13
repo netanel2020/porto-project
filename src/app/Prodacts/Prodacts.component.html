@@ -1,30 +1,40 @@
 <div>
 
 
-<!--<samp ></samp>-->
-<div>   
-<button [ngModel]  (click)="getPosts()">
-    Get the  prodacts</button> 
-</div>
+  <!--<samp ></samp>-->
 
 
 
+  <div *ngIf="time">
 
-<div >
-<div (onload)="getPosts()" *ngFor="let item of Posts">
+   <img src="../../assets/loading-slow-internet.gif" alt="loading" title="loading gif" style="position: center;" />
+    </div>
 
+  <div class="conteiner">
+    <div *ngFor="let item of Posts">
 
-     <h1  style="right: 50px;">{{item.PRDname}} </h1>
-     <h1>מחיר : ₪{{item.PRDPrice}} </h1>   
-    <img src="{{item.PRDImage}}"  width="300" height="200">
-    <h3>category:{{item.PRDCategory}}     contein:{{item.PRDTitle}} </h3>
-    <br>
-     <button #adbotton type="submit" [ngModel] (click)="add_to_busket(item)">
-         add to busket
+      <div class="prodFrame">
+        <div class="tytle">
+          <h1 class="name" style="right: 50px;">{{item.PRDname}} </h1>
+          <h1>מחיר : ₪{{item.PRDPrice}} </h1>
+        </div>
+
+        <img id="img" src="{{item.PRDImage}}" alt="{{item.PRDname}}" title="{{item.PRDAttribute}}">
+        <h3>category:{{item.PRDCategory}} </h3><br>
+        <h3> contein:{{item.PRDTitle}} </h3><br>
+        <button #adbotton type="submit" [ngModel] (click)="add_to_busket(item)">
+          add to busket
         </button>
 
-</div>
-</div>
+        <button *ngIf="manager" #adbotton type="submit" [ngModel] (click)="dalitem(item.PRDID)">
+          <div *ngIf="item.length == 0">
+            <p>somthing its wrong reload this page to solve this problem</p>
+            </div>
+          מחק מוצר
+        </button>
+      </div>
+    </div>
+  </div>
 
 
 </div>
