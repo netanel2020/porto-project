@@ -1,21 +1,21 @@
 <div>
 
 
-  <!--<samp ></samp>-->
+  <!--<samp ></samp> *ngIf="myElement"-->
 
 
 
-  <div *ngIf="time">
+  <div class="loading mx-auto" *ngIf="time">
 
-   <img src="../../assets/loading-slow-internet.gif" alt="loading" title="loading gif" style="position: center;" />
-    </div>
+    <img src="../../assets/tenor.gif" alt="loading" title="loading gif" style="position: center;" />
+  </div>
 
   <div class="conteiner">
     <div *ngFor="let item of Posts">
 
       <div class="prodFrame">
         <div class="tytle">
-          <h1 class="name" style="right: 50px;">{{item.PRDname}} </h1>
+          <h1 class="name tytle" style="right: 50px;">{{item.PRDname}} </h1>
           <h1>מחיר : ₪{{item.PRDPrice}} </h1>
         </div>
 
@@ -23,16 +23,18 @@
         <h3>category:{{item.PRDCategory}} </h3><br>
         <h3> contein:{{item.PRDTitle}} </h3><br>
         <button #adbotton type="submit" [ngModel] (click)="add_to_busket(item)">
-          add to busket
+          הוסף לסל
         </button>
 
         <button *ngIf="manager" #adbotton type="submit" [ngModel] (click)="dalitem(item.PRDID)">
-          <div *ngIf="item.length == 0">
-            <p>somthing its wrong reload this page to solve this problem</p>
-            </div>
+
           מחק מוצר
         </button>
       </div>
+
+    </div>
+    <div>
+      <p>somthing its wrong reload this page to solve this problem</p>
     </div>
   </div>
 

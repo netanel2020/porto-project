@@ -9,12 +9,12 @@ import { BusketData } from '../busketdata';
 })
 
 
-
 export class ProdactsComponent implements OnInit {
 
+//myElement =0;// document.getElementsByClassName(".conteiner");
 
   //links to my external websyte with my data
-  readonly ROOT_URL = "http://theporto.online/interwebapi/api/Prodact/Get/";
+  readonly ROOT_URL = "http://theporto.online/interwebapi/api/Prodact/Get";
   readonly ROOT_URLPostBusket = "http://theporto.online/interwebapi/api/Busket/addBusket/";
 
 
@@ -86,6 +86,8 @@ if(res.type==HttpEventType.UploadProgress){
       console.log("Waited 5s");
     this.getProduct();
 this.time=false;
+
+
     };
   ngOnInit(): void {
 this.getProduct();

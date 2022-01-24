@@ -11,6 +11,8 @@ import { Injectable } from '@angular/core';
 import { Observable,of} from 'rxjs';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, ROUTES, Routes } from '@angular/router';
+
+import { Meta, Title } from '@angular/platform-browser';
 //import { BusketData }from "../app/busketdata"
 //for right order component👇 and module👆
 
@@ -52,7 +54,7 @@ import { ShipmentComponent } from './shipment/shipment.component';
     LoginComponent,
     MyDeatalisComponent,
     ShipmentComponent,
-    
+
   ],
   imports: [
     HttpClientModule,
@@ -63,27 +65,28 @@ import { ShipmentComponent } from './shipment/shipment.component';
     MatIconModule,
     BrowserAnimationsModule,
     RouterModule,
-     
-    
+     Meta,
+     Title,
+
     AppRoutingModule,
     ReactiveFormsModule,
   // BusketData
    //Observable,
     CommonModule
-   
-  
+
+
   ],
   providers: [{
 provide:HTTP_INTERCEPTORS,
 useClass:custominterceptor,
 multi:true
   },
-    
-   PostRequestService,  
-   Injectable, 
 
-  
-   
+   PostRequestService,
+   Injectable,
+
+
+
   ],
   bootstrap: [AppComponent]
 })
