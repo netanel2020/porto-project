@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PostRequestService } from './post-request.service';
@@ -58,7 +57,6 @@ import { ShipmentComponent } from './shipment/shipment.component';
   ],
   imports: [
     HttpClientModule,
-    FormsModule,
     BrowserModule,
     MatToolbarModule,
     MatButtonModule,
@@ -69,7 +67,6 @@ import { ShipmentComponent } from './shipment/shipment.component';
      Title,
 
     AppRoutingModule,
-    ReactiveFormsModule,
   // BusketData
    //Observable,
     CommonModule
