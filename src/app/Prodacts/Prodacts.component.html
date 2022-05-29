@@ -7,11 +7,11 @@
 
   <div class="loading mx-auto" *ngIf="time">
 
-    <img src="../../assets/tenor.gif" alt="loading" title="loading gif" style="position: center;" />
+    <img src="../../assets/tenor.gif" alt="loading" title="loading gif" style="position: center; width: 100%;" />
   </div>
 
   <div class="conteiner">
-    <div *ngFor="let item of Posts">
+    <div id="card" *ngFor="let item of Posts">
 
       <div class="prodFrame">
         <div class="tytle">
@@ -34,7 +34,7 @@
 
     </div>
     <div>
-      <p>somthing its wrong reload this page to solve this problem</p>
+      <p *ngIf="chekIfDataExist">somthing its wrong reload this page to solve this problem</p>
     </div>
   </div>
 

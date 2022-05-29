@@ -1,34 +1,43 @@
-<div>
-
-    <!–– this data wil sent from the api server  ––>
+<div style="background-color: rgb(157, 230, 205);">
+  <button routerLink="/thanks"> לתשלום והשלמת ההזמנה</button>
+  <!–– this data wil sent from the api server ––>
     <br>
-    <p class="center">סה"כ לתשלום
-    {{SumPrice}}
+    <h1>
+      <p class="center">סה"כ לתשלום
+        {{SumPrice}}
 
-    </p ><button>לתשלום</button>
+      </p>
+    </h1>
     <br>
-<div class="conteiner" >
+    <div class="conteiner">
 
-  <div *ngIf="time">
+      <div *ngIf="time">
 
-    <img src="../../assets/loading-slow-internet.gif" alt="loading" title="loading gif" style="position: center;" />
-     </div>
+        <img src="../../assets/loading-slow-internet.gif" alt="loading" title="loading gif" style="position: center;" />
+      </div>
 
-            <div  *ngFor="let item of JSONBusPRDC">
-                <h1 class="name" style="right: 50px;">{{item.PRDname}} </h1>
-                <h1>מחיר : ₪{{item.PRDPrice}} </h1>
-                <img id="img" src="{{item.PRDImage}}" alt="{{item.PRDname}}" title="{{item.PRDAttribute}}"  >
-                <h3>category:{{item.PRDCategory}} </h3><br> <h3>   contein:{{item.PRDTitle}} </h3><br>
-               <button #adbotton type="submit" [ngModel] (click)="DeleteFromBusket(item.ItemId)" >
-                   הסר מהסל
-                </button>
-                <div *ngIf="item.length == 0">
-                  <p>somthing its wrong reload this page to solve this problem</p>
-                  </div>
-           </div>
-       </div>
-
-
+      <div *ngFor="let item of JSONBusPRDC">
+        <div *ngIf="item.PRDID" >
+          <h1 class="name" style="right: 50px;">{{item.PRDname}} </h1>
+          <h1>מחיר : ₪{{item.PRDPrice}} </h1>
+          <img id="img" src="{{item.PRDImage}}" alt="{{item.PRDname}}" title="{{item.PRDAttribute}}">
+          <h3>category:{{item.PRDCategory}} </h3><br>
+          <h3> contein:{{item.PRDTitle}} </h3><br>
+          <h2 dir="rtl"><button>+</button><button>-</button>
+            <button #adbotton type="submit" [ngModel] (click)="DeleteFromBusket(item.ItemId,item.PRDname)">
+              הסר מהסל
+            </button>
+            <h1>{{item.Quentity}} : כמות</h1>
+          </h2>
         </div>
+      </div>
+      <div *ngIf="JSONBusPRDC === !undefined">
+        <p>(for developer chenge the validation methode like produact component) </p>
+      </div>
 
 
+
+    </div>
+
+    <h1 dir="rtl">פריטים נוספים שאולי תרצה לראות</h1>
+</div>

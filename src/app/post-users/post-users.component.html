@@ -1,26 +1,24 @@
-
+<p>לחווית קניה מושלמת אנו ממליצים להירשם לאתר ממתינים לכם הרבה הפתעות ומבצעים שווים</p>
 <form #userForm="ngForm" (ngSubmit)="getUserFormData(userForm.value)">
-    <input type="text" ngModel name="USRname" placeholder="שם המשתמש">
+    <input class="lineInfo"  type="text" ngModel name="USRname" placeholder="שם המשתמש">
+    <input class="lineInfo" type="text" ngModel name="USRlastName" placeholder="שם משפחה">
     <br><br>
-    <input type="text" ngModel name="USRlastName" placeholder="שם משפחה">
+    <input class="lineInfo" type="text" ngModel name="USRaddres" placeholder="כתובת" >
+    <input class="lineInfo" type="text" ngModel name="City" placeholder="עיר">
     <br><br>
-    <input type="text" ngModel name="USRaddres" placeholder="כתובת"> 
+    <input id="pass" class="lineInfo" type="password" ngModel name="USPass" placeholder="סיסמה">
+    <input id="validPass" class="lineInfo" type="password" ngModel name="validPass" placeholder="אימות סיסמה">
     <br><br>
-    <input type="password" ngModel name="USPass" placeholder="סיסמה"> 
+
+    <input class="lineInfo" type="email" ngModel name="USRMail" placeholder="כתובת מייל">
+    <input  class="lineInfo"  type="tel" ngModel name="USRPhone" placeholder="טלפון">
     <br><br>
-    <input type="text" ngModel name="USPassValid" placeholder="אימות סיסמה">
-    <br><br>
-    <input type="text" ngModel name="City" placeholder="עיר">
-    <br><br>
-    <input type="email" ngModel name="USRMail" placeholder="כתובת מייל">
-    <br><br>
-    <input type="text" ngModel name="USRPhone" placeholder="טלפון">
-    <br><br>
-    <input type="text" ngModel name="USRPaymentDeatals" placeholder="פרטי תשלום">
-    <br><br>
+
     <button >sign in user</button>
     </form>
         <!--{"USRID":1
+style="display: none;"
+    <input class="lineInfo" type="password" ngModel name="USPass" placeholder="אימות סיסמה">
         "USRname":"sample string 2"
         "USRlastName":"sample string 3"
         "USRaddres":"sample string 4"

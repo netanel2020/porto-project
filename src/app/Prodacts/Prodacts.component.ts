@@ -1,5 +1,5 @@
 import { HttpClient, HttpEventType } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { PostRequestService } from '../post-request.service';
 import { BusketData } from '../busketdata';
 @Component({
@@ -8,10 +8,12 @@ import { BusketData } from '../busketdata';
   styleUrls: ['./Prodacts.component.less']
 })
 
-
+@Injectable({
+  providedIn: 'root'
+})
 export class ProdactsComponent implements OnInit {
 
-//myElement =0;// document.getElementsByClassName(".conteiner");
+  //myElement =0;// document.getElementsByClassName(".conteiner");
 
   //links to my external websyte with my data
   readonly ROOT_URL = "http://theporto.online/interwebapi/api/Prodact/Get";
@@ -19,84 +21,105 @@ export class ProdactsComponent implements OnInit {
 
 
   //var to get the data from http request
-  MyData:any;
+  MyData: any;
 
-
- public Posts:any;
- private BusketData= new BusketData;
+  chekIfDataExist: boolean = false;
+  public Posts: any;
+  private BusketData = new BusketData;
   s: any;
-  manager: boolean=false;
+  manager: boolean = true;
 
-  time: boolean=true;
-  uploadProgress: number=0;
+  time: boolean = true;
+  uploadProgress: number = 0;
 
-  constructor( private http:HttpClient,private PostRequest :PostRequestService) {}
+  constructor(private http: HttpClient, private PostRequest: PostRequestService) { }
   //my data get a strig with my data
-  delay =  async (ms:number) => new Promise(res => setTimeout(res, ms));
-  getProduct(){
+  delay = async (ms: number) => new Promise(res => setTimeout(res, ms));
 
-this.http.get(this.ROOT_URL).subscribe(data=> this.MyData=JSON.parse(data.toString()) )
-this.Posts=this.MyData ;
-console.log(this.MyData,"hello");
-console.log(this.Posts);
+  //function tp get items from api server
+  getProduct() {
+
+    this.http.get(this.ROOT_URL).subscribe(data => { if (data != "no data found") { console.log(data); return this.Posts = JSON.parse(data.toString()) } });
+
+    // this.http.get(this.ROOT_URL).subscribe(data => this.MyData = JSON.parse(data.toString()))
+    // this.Posts = this.MyData;
+    // console.log(this.MyData, "hello");
+    // console.log(this.Posts);
+    //Posts take the string and change it to json objec
+    //for test
+    //console.log(this.Posts);
+    // console.error;
+    this.chekIfDataExistFunc();
+  }
+  num: any = localStorage.getItem("deatails");
 
 
-//Posts take the string and change it to json object
+  //the function get the prodact and send it to web api server
+  add_to_busket(items: any) {
 
-//for test
-console.log(this.Posts);
-console.error;
+    this.BusketData.PRDID = items.PRDID; //adding the prodact id to class which save the data we need to save in the busket table
+    if (localStorage.getItem("deatails")) {
+      this.BusketData.BusketId = this.num;
+    } else {//if the user curently not register or sign in
+      alert("לשמירת הפריטים בסל מומלץ להירשם לאתר זה ממש בחינם ותמיד יש הטבות שוות")
+      localStorage.setItem("busketTempRendom", "1");//to do == i need to set a func to check if there is no someone else with this current temporery rendom id
     }
-    num:any=localStorage.getItem("deatails");
+    //to do ==check is ip and save it as a busket id wehn he register take is prodact and send them with the right id from db
+    this.PostRequest.SavePost(this.BusketData, this.ROOT_URLPostBusket).subscribe(); //sending a post request
+    // JSON.stringify(data);
+    //   if (data.type == HttpEventType.UploadProgress) {
 
-    add_to_busket(items:any){ //the function get the prodact and send it to web api server
+    //    console.log(data.loaded);
+    //  }
+    //massege for user the process secssed
+    alert("the prodact" + items.PRDname + "is bin added to your busket sucssefoly");
+  }
 
-    this.BusketData.PRDID=items.PRDID; //adding the prodact id to class which save the data we need to save in the busket table
-    if(localStorage.getItem("deatails")){
-      this.BusketData.BusketId= this.num;
+
+
+  //function to check if items is showing corectly
+  chekIfDataExistFunc() {
+    var element = document.getElementById('card');
+    if (typeof (element) != 'undefined' && element != null) {
+      this.chekIfDataExist = false;
+      // Exists.
+      this.time = false;
+    } else {
+      // alert("המידע שלך לא הגיע טוען מחדש")
+      this.wait1sec();
     }
-
-  this.PostRequest.SavePost( this.BusketData,this.ROOT_URLPostBusket).subscribe((data)=>{ //sending a post request
-  JSON.stringify(data);
-  if(data.type==HttpEventType.UploadProgress){
-    alert(data.loaded)
-    console.log(data.loaded);
-   }
-  //and now a massege for user the process secssed
-  console.log("the prodact" +items.PRDname + "is bin added to your busket sucssefoly");
-
-    })
+  }
 
 
-    }
-    dalitem(item:number){
 
-  this.http.delete("http://theporto.online/interwebapi/api/Prodact/Delete/"+item,{reportProgress:true,observe:'events'}).subscribe((res) => {this.s=res
-if(res.type==HttpEventType.UploadProgress){
- alert(res.loaded)
- console.log(res.loaded);
+  //function to delete items
+  dalitem(item: number) {
 
-}
-});
-  alert(this.s+"מוצר מספר"+item+" נמחק בהצלחה ")
+    this.http.delete("http://theporto.online/interwebapi/api/Prodact/Delete/" + item).subscribe((res) => {
+      this.s = res
 
-    }
-    wait2sec = async () => {
-      await this.delay(3000);
-      console.log("Waited 5s");
+    });
+    alert(this.s + "מוצר מספר" + item + " נמחק בהצלחה ")
+
+  }
+
+  //function to wait till the html element will be proper to show the data from server
+  wait1sec = async () => {
+    await this.delay(1000);
+    console.log("Waited 5s");
     this.getProduct();
-this.time=false;
 
 
-    };
+
+  };
   ngOnInit(): void {
-this.getProduct();
-this.wait2sec();
-if(localStorage.getItem("ef7")==="True"){
-  this.manager=true;
-}else{
-  this.manager=false;
-}
+    this.getProduct();
+    // this.wait1sec();
+    if (localStorage.getItem("ef7") === "True") {
+      this.manager = true;
+    } else {
+      this.manager = false;
+    }
   }
 
 }

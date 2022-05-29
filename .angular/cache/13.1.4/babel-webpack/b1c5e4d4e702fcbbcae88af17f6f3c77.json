@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { EventEmitter } from \"@angular/core\";\nexport class Emiter {}\nEmiter.auotEmiter = new EventEmitter();","map":null,"metadata":{},"sourceType":"module"}

@@ -12,8 +12,10 @@ export class PostUsersComponent implements OnInit {
     private router:Router
     ) { }
   getUserFormData(data:any){
-if(data.USPass===data.USPassValid){
+    data.Admin=false;
 
+if(data.validPass === data.USPass){
+delete data.validPass;
    JSON.stringify(data);
     this.PostRequest.SavePost(data,this.ROOT_URL).subscribe((data)=>{
 
@@ -30,7 +32,7 @@ if(data.USPass===data.USPassValid){
     }
     )
     }else{
-      window.alert("password not match")
+      window.alert("password not match" )
     }
   }
 

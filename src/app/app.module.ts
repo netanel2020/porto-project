@@ -11,7 +11,7 @@ import { Observable,of} from 'rxjs';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, ROUTES, Routes } from '@angular/router';
 
-import { Meta, Title } from '@angular/platform-browser';
+//import { Meta, Title } from '@angular/platform-browser';
 //import { BusketData }from "../app/busketdata"
 //for right order component👇 and module👆
 
@@ -33,6 +33,10 @@ import { MyDeatalisComponent } from './my-deatalis/my-deatalis.component';
 import { CommonModule } from '@angular/common';
 import { custominterceptor } from './custominterceptor';
 import { ShipmentComponent } from './shipment/shipment.component';
+import { FormsModule } from '@angular/forms';
+import { SpecialPriceComponent } from './special-price/special-price.component';
+import { GratitudeComponent } from './gratitude/gratitude.component';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -53,9 +57,13 @@ import { ShipmentComponent } from './shipment/shipment.component';
     LoginComponent,
     MyDeatalisComponent,
     ShipmentComponent,
+    SpecialPriceComponent,
+    GratitudeComponent,
+    SearchComponent,
 
   ],
   imports: [
+    FormsModule,
     HttpClientModule,
     BrowserModule,
     MatToolbarModule,
@@ -63,8 +71,7 @@ import { ShipmentComponent } from './shipment/shipment.component';
     MatIconModule,
     BrowserAnimationsModule,
     RouterModule,
-     Meta,
-     Title,
+   //  Meta, Title,
 
     AppRoutingModule,
   // BusketData

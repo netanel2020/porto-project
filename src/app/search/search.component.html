@@ -1,0 +1,41 @@
+<div style="background-color: yellow;">
+  <input class="search" (keyup)="Search($event)">
+  <h1 *ngIf="searchRes">result for {{searchRes}}</h1>
+  <p></p>
+
+  <div>
+
+
+    <!--<samp ></samp> *ngIf="myElement"-->
+    <!--<div class="loading mx-auto" >
+    <img src="../../assets/tenor.gif" alt="loading" title="loading gif" style="position: center; width: 100%;" />
+  </div>-->
+
+ <div *ngIf="!JSONptdOBJ">
+<h1>sory no result maches try search somthing else</h1>
+      </div>
+    <div class="conteiner" *ngIf="JSONptdOBJ">
+
+      <div id="card" *ngFor="let item of JSONptdOBJ">
+
+        <div class="prodFrame">
+          <div class="tytle">
+            <h1 class="name tytle" style="right: 50px;">{{item.PRDname}} </h1>
+            <h1>מחיר : ₪{{item.PRDPrice}} </h1>
+          </div>
+
+          <img id="img" src="{{item.PRDImage}}" alt="{{item.PRDname}}" title="{{item.PRDAttribute}}">
+          <h3>category:{{item.PRDCategory}} </h3><br>
+          <h3> contein:{{item.PRDTitle}} </h3><br>
+          <button #adbotton type="submit" [ngModel] (click)="add_to_busket(item)">
+            הוסף לסל
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>

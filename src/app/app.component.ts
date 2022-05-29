@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Meta, Title } from '@angular/platform-browser';
+//import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +9,8 @@ import { Meta, Title } from '@angular/platform-browser';
 })
 export class AppComponent {
   [x: string]: any;
-  public constructor(private titleService: Title,
-   private meta:Meta) { }
+  public constructor(//private titleService: Title,private meta:Meta
+   ) { }
 
   public setTitle(newTitle: string) {
     this.titleService.setTitle(newTitle);
