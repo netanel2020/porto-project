@@ -10,7 +10,6 @@ import { Injectable } from '@angular/core';
 import { Observable,of} from 'rxjs';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, ROUTES, Routes } from '@angular/router';
-
 //import { Meta, Title } from '@angular/platform-browser';
 //import { BusketData }from "../app/busketdata"
 //for right order component👇 and module👆
@@ -37,6 +36,7 @@ import { FormsModule } from '@angular/forms';
 import { SpecialPriceComponent } from './special-price/special-price.component';
 import { GratitudeComponent } from './gratitude/gratitude.component';
 import { SearchComponent } from './search/search.component';
+import { BarRatingModule } from 'ng2-bar-rating';
 
 
 @NgModule({
@@ -71,13 +71,14 @@ import { SearchComponent } from './search/search.component';
     MatIconModule,
     BrowserAnimationsModule,
     RouterModule,
+
    //  Meta, Title,
 
     AppRoutingModule,
   // BusketData
    //Observable,
-    CommonModule
-
+    CommonModule,
+BarRatingModule,
 
   ],
   providers: [{

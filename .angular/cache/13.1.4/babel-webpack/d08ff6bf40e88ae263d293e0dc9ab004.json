@@ -1,0 +1,1 @@
+{"ast":null,"code":"export { CollapseDirective } from './collapse.directive';\nexport { CollapseModule } from './collapse.module'; //# sourceMappingURL=index.js.map","map":null,"metadata":{},"sourceType":"module"}

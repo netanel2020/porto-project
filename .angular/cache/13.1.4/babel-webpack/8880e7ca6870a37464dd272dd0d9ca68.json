@@ -1,0 +1,1 @@
+{"ast":null,"code":"export { ModalBackdropComponent, ModalBackdropOptions } from './modal-backdrop.component';\nexport { ModalDirective } from './modal.component';\nexport { ModalModule } from './modal.module'; //# sourceMappingURL=index.js.map","map":null,"metadata":{},"sourceType":"module"}

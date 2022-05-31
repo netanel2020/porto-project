@@ -11,6 +11,11 @@ export class GratitudeComponent implements OnInit {
   savePdf(){
 
   }
+  getCstmrRviwsFormData(form:any){
+
+  }
+  currentRate = 3.14;
+
   ngOnInit(): void {
   }
 

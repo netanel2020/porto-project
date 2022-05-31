@@ -33,6 +33,7 @@ const routes: Routes = [
   {path:'shipment',component:ShipmentComponent},
   {path:'search/:term',component:SearchComponent},
   {path:'search',component:SearchComponent},
+{path:'gratetude',component:GratitudeComponent},
 {path:'*',component:AppComponent}
 ];
 

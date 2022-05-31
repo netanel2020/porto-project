@@ -1,2 +1,19 @@
+
 <h1 rtl>תודה שקניתם אצלנו שמחנו לעמוד לשירותכם ניפגש בשבוע הבא</h1>
 <button (click)="savePdf()">להורדת אישור תשלום</button>
+<h1 dir="rtl" style="margin:auto">
+  רכשת מוצר בפורטו? אנא הקדש/י דקה מזמנך כדי לחוות דעתך על החנות ותהליך הקנייה</h1>
+
+  <br>
+<form #CstmrRviwsForm="ngForm" (ngSubmit)="getCstmrRviwsFormData(CstmrRviwsForm.value)">
+<input type="text" ngModel name="PRDname" placeholder="">
+<label>אנא הזן את שם המוצר</label>
+<input type="text" ngModel name="reviews" placeholder="">
+<label>אנא כתוב את חוות דעתך</label>
+<input type="text" ngModel name="rate" placeholder="">
+<bar-rating name="rating" [(ngModel)]="formRating" [max]="4" required disabled></bar-rating>
+<input type="file" ngModel name="img" placeholder="">
+<label>צרף תמונה</label>
+<button> שלח חוות דעת</button>
+</form>
+<pre>{{ formRating }}</pre>

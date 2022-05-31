@@ -1,0 +1,1 @@
+{"ast":null,"code":"import moment from 'moment';\nexport var DateFormatter = function () {\n  function DateFormatter() {}\n\n  DateFormatter.prototype.format = function (date, format) {\n    return moment(date.getTime()).format(format);\n  };\n\n  return DateFormatter;\n}(); //# sourceMappingURL=date-formatter.js.map","map":null,"metadata":{},"sourceType":"module"}

@@ -1,0 +1,1 @@
+{"ast":null,"code":"export var TypeaheadOptions = function () {\n  function TypeaheadOptions(options) {\n    Object.assign(this, options);\n  }\n\n  return TypeaheadOptions;\n}(); //# sourceMappingURL=typeahead-options.class.js.map","map":null,"metadata":{},"sourceType":"module"}
