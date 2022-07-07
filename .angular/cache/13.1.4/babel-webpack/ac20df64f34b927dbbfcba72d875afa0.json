@@ -1,1 +1,0 @@
-{"ast":null,"code":"export { TimepickerConfig } from './timepicker.config';\nexport { TimepickerComponent } from './timepicker.component';\nexport { TimepickerModule } from './timepicker.module'; //# sourceMappingURL=index.js.map","map":null,"metadata":{},"sourceType":"module"}

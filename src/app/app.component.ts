@@ -7,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   [x: string]: any;
   public constructor(//private titleService: Title,private meta:Meta
    ) { }
+  ngOnInit(): void {
+    alert("this design is temporary you can fiend  the new design in about page")
+   // throw new Error('Method not implemented.');
+  }
 
   public setTitle(newTitle: string) {
     this.titleService.setTitle(newTitle);

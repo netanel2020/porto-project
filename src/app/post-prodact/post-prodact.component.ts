@@ -12,11 +12,11 @@ export class PostProdactComponent implements OnInit {
 //initial postrequest service
   constructor(private PostRequest :PostRequestService,
    private router:Router) { }
-  readonly ROOT_URL = "http://theporto.online/interwebapi/api/Prodact/addProdact/";
+  readonly ROOT_URL = "https://theporto.online/interwebapi/api/Prodact/addProdact/";
   ngOnInit(): void {
     if(localStorage.getItem("ef7")==="True"){
-
-      }else{
+//if user is an manager stay in this component
+      }else{//not manager navigate to login page
         this.router.navigate(["/login"]);
 
       }

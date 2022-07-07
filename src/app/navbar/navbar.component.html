@@ -4,7 +4,7 @@
     <a class="secondery" id="third" mat-button routerLink="/location">הוראות הגעה</a>
     <a class="secondery" id="third" mat-button>מבצעים חמים</a>
     <a class="secondery" mat-button>המלצות</a>
-    <a class="secondery" mat-button routerLink="/search">חפש מוצר</a>
+    <a class="secondery" id="third" mat-button routerLink="/search">חפש מוצר</a>
     <a class="main" mat-button routerLink="/login" *ngIf="!autenticated">כניסה</a>
     <a class="main" mat-button routerLink="/add-users" *ngIf="!autenticated">הירשם</a>
     <a class="main" mat-button routerLink="/managment" *ngIf="manager">ניהול</a>
@@ -23,7 +23,7 @@
         <div>   <a class="seconderyUL" id="thirdUL" mat-button routerLink="/location">הוראות הגעה</a>    </div>
         <div>    <a class="seconderyUL" id="thirdUL" mat-button>מבצעים חמים</a>     </div>
         <div id="thirdUL2"> <a class="seconderyUL"  mat-button>המלצות</a></div>
-        <div id="thirdUL2"><a class="seconderyUL"   mat-button (click)="Show()">חפש מוצר</a></div>
+        <div id="thirdUL2"><a class="seconderyUL"   mat-button routerLink="/search">חפש מוצר</a></div>
         <div id="thirdUL2">  <a class="seconderyUL"  mat-button routerLink="/AboutUs">אודות</a>     </div>
     </div>
 <div>

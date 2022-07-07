@@ -16,6 +16,7 @@ import { ShipmentComponent } from './shipment/shipment.component';
 import { GratitudeComponent } from './gratitude/gratitude.component';
 import { SearchComponent } from './search/search.component';
 import { AppComponent } from './app.component';
+import { MycvComponent } from './mycv/mycv.component';
 const routes: Routes = [
   {path:'thanks',component:GratitudeComponent},
   { path: 'prodacts', component: ProdactsComponent},
@@ -34,6 +35,8 @@ const routes: Routes = [
   {path:'search/:term',component:SearchComponent},
   {path:'search',component:SearchComponent},
 {path:'gratetude',component:GratitudeComponent},
+
+{path:'cv',component:MycvComponent},
 {path:'*',component:AppComponent}
 ];
 

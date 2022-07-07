@@ -1,1 +1,0 @@
-{"ast":null,"code":"export { positionElements, Positioning } from './ng-positioning';\nexport { PositioningService } from './positioning.service'; //# sourceMappingURL=index.js.map","map":null,"metadata":{},"sourceType":"module"}

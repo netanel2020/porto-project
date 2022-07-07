@@ -12,7 +12,7 @@ export class GetOrderComponent implements OnInit {
 
 
     //link to my external websyte with my data
-    readonly ROOT_URL = "http://theporto.online/interwebapi/api/Orders/Get";
+    readonly ROOT_URL = "https://theporto.online/interwebapi/api/Orders/Get";
 
     //var to get the data from http request
     MyData:any="";

@@ -1,1 +1,0 @@
-{"ast":null,"code":"export { AlertComponent } from './alert.component';\nexport { AlertModule } from './alert.module';\nexport { AlertConfig } from './alert.config'; //# sourceMappingURL=index.js.map","map":null,"metadata":{},"sourceType":"module"}

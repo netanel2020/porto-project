@@ -18,7 +18,7 @@ massage="hello";
 
   ngOnInit(): void {
 
-    this.http.post("http://theporto.online/interwebapi/api/Auth/GetName2",//,lo{headers:headers}calStorage.getItem("jwt")
+    this.http.post("https://theporto.online/interwebapi/api/Auth/GetName2",//,lo{headers:headers}calStorage.getItem("jwt")
 
     {withCredentials:true},
 

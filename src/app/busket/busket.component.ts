@@ -27,7 +27,7 @@ export class BusketComponent implements OnInit {
   JSONBusPRDC: any;
   BusketProdact: busketinterface[] = [];
 
-  readonly ROOT_URL = "http://theporto.online/interwebapi/api/Busket/Get/" + this.MyBusketID;
+  readonly ROOT_URL = "https://theporto.online/interwebapi/api/Busket/Get/" + this.MyBusketID;
   //link to my external websyte with my data
 
 
@@ -102,7 +102,7 @@ return all;
   };
 
   DeleteFromBusket(ITEM: Number,ItemName:string) {
-    this.http.delete("http://theporto.online/interwebapi/api/Busket/Delete/" + ITEM).subscribe((res) => this.s = res);
+    this.http.delete("https://theporto.online/interwebapi/api/Busket/Delete/" + ITEM).subscribe((res) => this.s = res);
     alert(ItemName +  " נמחק בהצלחה ")
 
     window.location.reload()

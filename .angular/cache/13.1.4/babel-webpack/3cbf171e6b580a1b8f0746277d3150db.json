@@ -1,1 +1,0 @@
-{"ast":null,"code":"import { window } from './facade/browser';\nexport function isBs3() {\n  return window.__theme !== 'bs4';\n} //# sourceMappingURL=ng2-bootstrap-config.js.map","map":null,"metadata":{},"sourceType":"module"}

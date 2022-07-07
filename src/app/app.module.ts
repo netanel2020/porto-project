@@ -37,6 +37,7 @@ import { SpecialPriceComponent } from './special-price/special-price.component';
 import { GratitudeComponent } from './gratitude/gratitude.component';
 import { SearchComponent } from './search/search.component';
 import { BarRatingModule } from 'ng2-bar-rating';
+import { MycvComponent } from './mycv/mycv.component';
 
 
 @NgModule({
@@ -60,6 +61,7 @@ import { BarRatingModule } from 'ng2-bar-rating';
     SpecialPriceComponent,
     GratitudeComponent,
     SearchComponent,
+    MycvComponent,
 
   ],
   imports: [

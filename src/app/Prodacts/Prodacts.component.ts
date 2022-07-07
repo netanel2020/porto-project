@@ -2,6 +2,7 @@ import { HttpClient, HttpEventType } from '@angular/common/http';
 import { Component, Injectable, OnInit } from '@angular/core';
 import { PostRequestService } from '../post-request.service';
 import { BusketData } from '../busketdata';
+
 @Component({
   selector: 'app-Prodacts',
   templateUrl: './Prodacts.component.html',
@@ -13,11 +14,10 @@ import { BusketData } from '../busketdata';
 })
 export class ProdactsComponent implements OnInit {
 
-  //myElement =0;// document.getElementsByClassName(".conteiner");
 
   //links to my external websyte with my data
-  readonly ROOT_URL = "http://theporto.online/interwebapi/api/Prodact/Get";
-  readonly ROOT_URLPostBusket = "http://theporto.online/interwebapi/api/Busket/addBusket/";
+  readonly ROOT_URL = "https://theporto.online/interwebapi/api/Prodact/Get";
+  readonly ROOT_URLPostBusket = "https://theporto.online/interwebapi/api/Busket/addBusket/";
 
 
   //var to get the data from http request
@@ -41,14 +41,7 @@ export class ProdactsComponent implements OnInit {
 
     this.http.get(this.ROOT_URL).subscribe(data => { if (data != "no data found") { console.log(data); return this.Posts = JSON.parse(data.toString()) } });
 
-    // this.http.get(this.ROOT_URL).subscribe(data => this.MyData = JSON.parse(data.toString()))
-    // this.Posts = this.MyData;
-    // console.log(this.MyData, "hello");
-    // console.log(this.Posts);
-    //Posts take the string and change it to json objec
-    //for test
-    //console.log(this.Posts);
-    // console.error;
+
     this.chekIfDataExistFunc();
   }
   num: any = localStorage.getItem("deatails");
@@ -61,8 +54,10 @@ export class ProdactsComponent implements OnInit {
     if (localStorage.getItem("deatails")) {
       this.BusketData.BusketId = this.num;
     } else {//if the user curently not register or sign in
+      let bskTime:number=Date.now();
       alert("לשמירת הפריטים בסל מומלץ להירשם לאתר זה ממש בחינם ותמיד יש הטבות שוות")
-      localStorage.setItem("busketTempRendom", "1");//to do == i need to set a func to check if there is no someone else with this current temporery rendom id
+      localStorage.setItem("busketTempRendom", bskTime+"0");//to do == i need to set a func to check if there is no someone else with this current temporery rendom id
+      this.BusketData.BusketId = this.num=Number(localStorage.getItem("busketTempRendom"));
     }
     //to do ==check is ip and save it as a busket id wehn he register take is prodact and send them with the right id from db
     this.PostRequest.SavePost(this.BusketData, this.ROOT_URLPostBusket).subscribe(); //sending a post request
@@ -95,7 +90,7 @@ export class ProdactsComponent implements OnInit {
   //function to delete items
   dalitem(item: number) {
 
-    this.http.delete("http://theporto.online/interwebapi/api/Prodact/Delete/" + item).subscribe((res) => {
+    this.http.delete("https://theporto.online/interwebapi/api/Prodact/Delete/" + item).subscribe((res) => {
       this.s = res
 
     });
