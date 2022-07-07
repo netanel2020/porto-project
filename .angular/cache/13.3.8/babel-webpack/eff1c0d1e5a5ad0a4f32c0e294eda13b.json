@@ -1,1 +1,0 @@
-{"ast":null,"code":"export * from './rating.module';\nexport { BarRatingComponent } from './component/bar-rating.component'; //# sourceMappingURL=index.js.map","map":null,"metadata":{},"sourceType":"module"}

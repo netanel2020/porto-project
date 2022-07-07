@@ -119,5 +119,7 @@
       }
     }
   },
-  "defaultProject": "porto-project"
+  "cli": {
+    "analytics": false
+  }
 }

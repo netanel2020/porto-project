@@ -80,7 +80,7 @@ import { MycvComponent } from './mycv/mycv.component';
   // BusketData
    //Observable,
     CommonModule,
-BarRatingModule,
+//BarRatingModule,
 
   ],
   providers: [{
