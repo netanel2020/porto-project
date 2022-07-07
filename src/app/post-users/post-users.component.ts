@@ -7,13 +7,16 @@ import { PostRequestService } from '../post-request.service';
   styleUrls: ['./post-users.component.less']
 })
 export class PostUsersComponent implements OnInit {
-  readonly ROOT_URL = "http://theporto.online/interwebapi/api/Users/addUsers";
+  readonly ROOT_URL = "https://theporto.online/interwebapi/api/Users/addUsers";
   constructor(private PostRequest :PostRequestService,
     private router:Router
     ) { }
   getUserFormData(data:any){
     data.Admin=false;
-
+ if(localStorage.getItem("busketTempRendom")){
+   //if the current user have some prodacts in hes busket before he's signd in
+   //send a massege to update db with to curent userid
+ }
 if(data.validPass === data.USPass){
 delete data.validPass;
    JSON.stringify(data);

@@ -10,7 +10,7 @@ import { ProdactsComponent } from '../Prodacts/Prodacts.component';
 export class SearchComponent implements OnInit {
   JSONptdOBJ: any="";
   searchRes: any;
-  query = "http://theporto.online/interwebapi/api/Prodact/GetSearch/?s=";
+  query = "https://theporto.online/interwebapi/api/Prodact/GetSearch/?s=";
   constructor(
     private prodacts: ProdactsComponent,
     private router: Router,
@@ -32,9 +32,7 @@ console.log(this.JSONptdOBJ)
   }
 
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {  }
 
 }
 
