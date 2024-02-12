@@ -10,7 +10,7 @@ import { ProdactsComponent } from '../Prodacts/Prodacts.component';
 export class SearchComponent implements OnInit {
   JSONptdOBJ: any="";
   searchRes: any;
-  query = "https://theporto.online/interwebapi/api/Prodact/GetSearch/?s=";
+  query = "https://theprotest.online/interwebapi/api/Prodact/GetSearch/?s=";
   constructor(
     private prodacts: ProdactsComponent,
     private router: Router,

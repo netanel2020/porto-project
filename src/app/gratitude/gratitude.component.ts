@@ -9,7 +9,7 @@ import { emit } from 'process'; */
   styleUrls: ['./gratitude.component.less']
 })
 export class GratitudeComponent implements OnInit {
-  LINK="https://theporto.online/interwebapi/api/Upload/post";
+  LINK="https://theprotest.online/interwebapi/api/Upload/post";
   massage: string = "";
   progress: number = 0;
   @Output() public onUploadFinish = new EventEmitter();

@@ -43,3 +43,21 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+.angular/cache/14.0.5/angular-webpack/1a6303f329d0e5204e239db59356d30fdf5aef2c/0.pack
+.angular/cache/14.0.5/angular-webpack/1a6303f329d0e5204e239db59356d30fdf5aef2c/1.pack
+.angular/cache/14.0.5/angular-webpack/1a6303f329d0e5204e239db59356d30fdf5aef2c/2.pack
+.angular/cache/14.0.5/angular-webpack/1a6303f329d0e5204e239db59356d30fdf5aef2c/3.pack
+.angular/cache/14.0.5/angular-webpack/1a6303f329d0e5204e239db59356d30fdf5aef2c/index.pack
+.angular/cache/14.0.5/angular-webpack/1a6303f329d0e5204e239db59356d30fdf5aef2c/index.pack.old
+.angular/cache/14.0.5/babel-webpack/0bf7c411d4866d4f241b15f13a3733ab.json
+.angular/cache/14.0.5/babel-webpack/3f54a6f2114eda18852e14568814c652.json
+.angular/cache/14.0.5/babel-webpack/335fd70a9d15d529ed97e20fb941e593.json
+.angular/cache/14.0.5/babel-webpack/426c76f6b4971905ca91d6e7636c75ae.json
+.angular/cache/14.0.5/babel-webpack/1595d8b4385fb3bb30f7ac85a6d470bc.json
+.angular/cache/14.0.5/babel-webpack/3846be42bbfe4692393c6f51bcd74016.json
+.angular/cache/14.0.5/babel-webpack/930150e4d5feec0e6044f884e897e9e5.json
+.angular/cache/14.0.5/babel-webpack/aa9249ed88fb8d55320cd6316ed24d24.json
+.angular/cache/14.0.5/babel-webpack/c30aabfcf30901dac7b3bb0a01599b40.json
+.angular/cache/14.0.5/babel-webpack/d086a907b0ff075be8e7f0f48fd06d97.json
+.angular/cache/14.0.5/babel-webpack/e3c86470b0e076b50cdae79fdb8d7994.json
+.angular/cache/14.0.5/babel-webpack/ea6ea681c0a0e1610fd0f35828562cb0.json

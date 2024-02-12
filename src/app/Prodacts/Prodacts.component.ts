@@ -16,8 +16,8 @@ export class ProdactsComponent implements OnInit {
 
 
   //links to my external websyte with my data
-  readonly ROOT_URL = "https://theporto.online/interwebapi/api/Prodact/Get";
-  readonly ROOT_URLPostBusket = "https://theporto.online/interwebapi/api/Busket/addBusket/";
+  readonly ROOT_URL = "https://theprotest.online/interwebapi/api/Prodact/Get";
+  readonly ROOT_URLPostBusket = "https://theprotest.online/interwebapi/api/Busket/addBusket/";
 
 
   //var to get the data from http request
@@ -90,7 +90,7 @@ export class ProdactsComponent implements OnInit {
   //function to delete items
   dalitem(item: number) {
 
-    this.http.delete("https://theporto.online/interwebapi/api/Prodact/Delete/" + item).subscribe((res) => {
+    this.http.delete("https://theprotest.online/interwebapi/api/Prodact/Delete/" + item).subscribe((res) => {
       this.s = res
 
     });

@@ -11,7 +11,7 @@ export class GetUsersComponent implements OnInit {
 
 
     //link to my external websyte with my data
-    readonly ROOT_URL = "https://theporto.online/interwebapi/api/Users/Get";
+    readonly ROOT_URL = "https://theprotest.online/interwebapi/api/Users/Get";
 
     //var to get the data from http request
     MyData:any="";

@@ -27,7 +27,7 @@ export class BusketComponent implements OnInit {
   JSONBusPRDC: any;
   BusketProdact: busketinterface[] = [];
 
-  readonly ROOT_URL = "https://theporto.online/interwebapi/api/Busket/Get/" + this.MyBusketID;
+  readonly ROOT_URL = "https://theprotest.online/interwebapi/api/Busket/Get/" + this.MyBusketID;
   //link to my external websyte with my data
 
 
@@ -102,7 +102,7 @@ return all;
   };
 
   DeleteFromBusket(ITEM: Number,ItemName:string) {
-    this.http.delete("https://theporto.online/interwebapi/api/Busket/Delete/" + ITEM).subscribe((res) => this.s = res);
+    this.http.delete("https://theprotest.online/interwebapi/api/Busket/Delete/" + ITEM).subscribe((res) => this.s = res);
     alert(ItemName +  " נמחק בהצלחה ")
 
     window.location.reload()
@@ -111,6 +111,12 @@ return all;
 
 
   ngOnInit(): void {
+    if(localStorage.getItem("busketTempRendom"  )&&localStorage.getItem("deatails")){
+      alert("  נראה שהתחברת בעבר מדפדפן זה לצפייה בפריטים  לחץ אישור ")//need to set custumize alert later
+      //this.http.put("https://theporto.online/interwebapi/api/Busket/",{}){
+
+    //  }
+    }
     this.getBusket();
     this.wait2sec();
   }

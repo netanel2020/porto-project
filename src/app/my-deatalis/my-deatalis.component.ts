@@ -18,7 +18,7 @@ massage="hello";
 
   ngOnInit(): void {
 
-    this.http.post("https://theporto.online/interwebapi/api/Auth/GetName2",//,lo{headers:headers}calStorage.getItem("jwt")
+    this.http.post("https://theprotest.online/interwebapi/api/Auth/GetName2",//,lo{headers:headers}calStorage.getItem("jwt")
 
     {withCredentials:true},
 
@@ -45,7 +45,7 @@ if(res.isadmin==="True"){
       },
       err=>{
         Emiter.auotEmiter.emit(false)
-        this.massage='זיהוי נכשל';
+        this.massage='הפרטים שהוזנו אינם קיימים במערכת נסו שוב או הרשמו' ;
         alert(this.massage);
         //set authEmiter false if the user not aotenticated sucssefoly
         Emiter.auotEmiter.emit(false);
