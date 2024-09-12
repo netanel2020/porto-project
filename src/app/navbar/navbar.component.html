@@ -1,23 +1,42 @@
-<mat-toolbar  class="mat-elevation-z18">
-    <a mat-button routerLink="/AboutUs">אודות</a>
-    <a mat-button>משלוחים   </a>
-    <a mat-button routerLink="/location">הוראות הגעה</a>
-    <a mat-button>מבצעים חמים</a>
-    <a mat-button>המלצות</a>
-    <a mat-button>גם אנחנו נהנינו בפורטו</a>
-    
-    <nav>
-      <a mat-button routerLink="/login">כניסה</a>
-    </nav>
-    <nav>
-        <a mat-button routerLink="/add-users">הירשם</a>
-      </nav>
-    <nav>
-        <a mat-button routerLink="/managment">ניהול</a>
-      </nav>
-        <a routerLink="/busket" mat-raised-button  color="" >הסל שלי</a>
-     
+<mat-toolbar class="mat-elevation-z18">
+  <a mat-button class="col" routerLink="/AboutUs">אודות</a>
+  <a mat-button class="col" routerLink="/shipment">משלוחים </a>
+  <a mat-button class="col" routerLink="/location">הוראות הגעה</a>
+  <a mat-button class="col">מבצעים חמים</a>
+  <a mat-button class="col">המלצות</a>
+  <a mat-button class="col" (click)="Show()">חפש מוצר</a>
+  <input *ngIf="itsPushed" (mouseout)="UnShow()" (value)="Search()" />
+  <a
+    mat-button
+    class="col"
+    id="nessery"
+    routerLink="/login"
+    *ngIf="!autenticated"
+    >כניסה</a
+  >
+  <a
+    mat-button
+    class="col"
+    id="nessery"
+    routerLink="/add-users"
+    *ngIf="!autenticated"
+    >הירשם</a
+  >
+  <a
+    mat-button
+    class="col"
+    id="nessery"
+    routerLink="/managment"
+    *ngIf="autenticated2"
+    >ניהול</a
+  >
+  <a mat-button class="col" id="nessery" (click)="logout()" *ngIf="autenticated"
+    >יציאה</a
+  >
+  <a class="col" id="nessery" routerLink="/busket" mat-raised-button color=""
+    >הסל שלי</a
+  >
 </mat-toolbar>
 <div>
-    <img  src="../../assets/porto-logo-jpg2.jpg" alt="logo"/>
+  <img src="../../assets/porto-logo-jpg2.jpg" alt="logo" />
 </div>

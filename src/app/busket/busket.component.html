@@ -1,25 +1,32 @@
 <div>
-<div>   
-    <button (click)="getBusket()">
-        Get your busket list</button> 
+  <div>
+    <button (click)="getBusket()">Get your busket list</button>
+  </div>
+  <!–– this data wil sent from the api server  ––>
+  <br />
+  <p class="center">
+    סה"כ לתשלום
+    {{ SumPrice }}
+  </p>
+  <button>לתשלום</button>
+  <br />
+  <div class="prod">
+    <div *ngFor="let item of JSONBusPRDC">
+      <h1 class="name" style="right: 50px">{{ item.PRDname }}</h1>
+      <h1>מחיר : ₪{{ item.PRDPrice }}</h1>
+      <img src="{{ item.PRDImage }}" width="300" height="200" />
+      <h3>category:{{ item.PRDCategory }}</h3>
+      <br />
+      <h3>contein:{{ item.PRDTitle }}</h3>
+      <br />
+      <button
+        #adbotton
+        type="submit"
+        [ngModel]
+        (click)="DeleteFromBusket(item.ItemId)"
+      >
+        הסר מהסל
+      </button>
     </div>
-    <!–– this data wil sent from the api server  ––>
-    
-    
-<div>
-    
-        <ul *ngFor="let item of BusketProdact" >
-
-<li>
-            <h1  style="right: 50px;">{{item.PRDname}} </h1>
-            <h1>מחיר : ₪{{item.PRDPrice}} </h1>   
-           <img src="{{item.PRDImage}}"  width="300" height="200">
-           <h3>category:{{item.PRDCategory}}     contein:{{item.PRDTitle}} </h3>
-           <br>
-</li>
-        </ul>
-       </div>
-    
-        </div>
-    
-    
+  </div>
+</div>

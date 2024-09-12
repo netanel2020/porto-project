@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PostRequestService } from './post-request.service';
 import { Injectable } from '@angular/core';
-import { observable} from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, ROUTES, Routes } from '@angular/router';
 //import { BusketData }from "../app/busketdata"
@@ -28,7 +28,10 @@ import { ManagementComponent } from './management/management.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { LocationComponent } from './location/location.component';
 import { LoginComponent } from './login/login.component';
-
+import { MyDeatalisComponent } from './my-deatalis/my-deatalis.component';
+import { CommonModule } from '@angular/common';
+import { custominterceptor } from './custominterceptor';
+import { ShipmentComponent } from './shipment/shipment.component';
 
 @NgModule({
   declarations: [
@@ -45,8 +48,9 @@ import { LoginComponent } from './login/login.component';
     ManagementComponent,
     AboutUsComponent,
     LocationComponent,
-    LoginComponent
-    
+    LoginComponent,
+    MyDeatalisComponent,
+    ShipmentComponent,
   ],
   imports: [
     HttpClientModule,
@@ -58,18 +62,19 @@ import { LoginComponent } from './login/login.component';
     BrowserAnimationsModule,
     RouterModule,
     AppRoutingModule,
-    ReactiveFormsModule
-  // BusketData
-   //Observabl
-   
-  
+    ReactiveFormsModule,
+    CommonModule,
   ],
   providers: [
-    
-   PostRequestService, 
-   Injectable,
-   
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: custominterceptor,
+      multi: true,
+    },
+
+    PostRequestService,
+    Injectable,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

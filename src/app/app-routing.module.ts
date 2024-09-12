@@ -11,6 +11,8 @@ import { PostOrderComponent } from './post-order/post-order.component';
 import { ManagementComponent } from './management/management.component';
 import { LocationComponent } from './location/location.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { MyDeatalisComponent } from './my-deatalis/my-deatalis.component';
+import { ShipmentComponent } from './shipment/shipment.component';
 const routes: Routes = [
   { path: 'prodacts', component: ProdactsComponent}, 
    { path: 'AboutUs', component: AboutUsComponent},
@@ -23,6 +25,8 @@ const routes: Routes = [
   { path: 'managment', component: ManagementComponent},
   { path: 'location', component:LocationComponent },
   {path:'login',component:LoginComponent},
+  {path:'mydetails',component:MyDeatalisComponent},
+  {path:'shipment',component:ShipmentComponent},
   
 ];
 
